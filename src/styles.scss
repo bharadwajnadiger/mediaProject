@@ -1,1 +1,112 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+$color-primary: #FF0000;
+$color-secondary: #FF0000;
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mediaProject-primary: mat-palette($mat-indigo);
+$mediaProject-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mediaProject-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$mediaProject-theme: mat-light-theme($mediaProject-primary, $mediaProject-accent, $mediaProject-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($mediaProject-theme);
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mediaProject-primary: mat-palette($mat-red);
+$mediaProject-accent: mat-palette($mat-yellow, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mediaProject-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$mediaProject-theme: mat-light-theme($mediaProject-primary, $mediaProject-accent, $mediaProject-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($mediaProject-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.login-page{
+    height: 100vh;
+   width:100vw;
+    background-image: url("https://marketplace.canva.com/EAD2-sy3snI/2/0/1600w/canva-tropical-happiness-zoom-virtual-background-JtPR2q13C4g.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+   
+}
+
+  
+.login-section {
+    vertical-align: middle;
+    height: 100%;
+  }
+
+.login-card{
+    width: 350px;
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    .login-title{
+        text-align: center;
+        font-weight: bold;
+    }
+    .form-header{
+        font-weight: bold;   
+    }
+}
+
+@media only screen and (max-width: 409px){
+    .login-card {
+        width: 300px;
+       
+    }
+}
+
+
+
+

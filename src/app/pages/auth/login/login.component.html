@@ -1,0 +1,66 @@
+<div class="login-page">
+  <section class="login-section" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+    <mat-card class="login-card" fxLayout="column" fxLayoutAlign="start ">
+      <form *ngIf="!showSignUpForm" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+        <h1 class="login-title">Login</h1>
+        <div fxLayout="column">
+         
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" formControlName="mobile_number">
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="iconValue === 'visibility_off' ? 'password' : 'text'" placeholder="Password" formControlName="password">
+            <mat-icon matSuffix (click)="iconValue =iconValue === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValue}}</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+          <button type="submit" mat-flat-button color="primary">Login</button>
+          <button type="button" mat-stroked-button (click)="changeForm('Sign Up')">Sign Up</button>
+          <div fxLayout="row">
+            <a href="xxx" fxFlexOffset="50" style="cursor:pointer;">Forget Password?</a>
+          </div>
+        </div>
+      </form>
+      <form  *ngIf="showSignUpForm"  [formGroup]="signForm" (ngSubmit)="onSubmitSignup()">
+        <h1 class="login-title">Sign Up</h1>
+        <div fxLayout="column">
+         
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Mail</mat-label>
+            <input matInput placeholder="Mail" formControlName="Mail">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="iconValue === 'visibility_off' ? 'password' : 'text'" placeholder="Password" formControlName="password">
+            <mat-icon matSuffix (click)="iconValue =iconValue === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValue}}</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="iconValueConfrim === 'visibility_off' ? 'password' : 'text'" placeholder="Confirm Password" formControlName="confirmPassword">
+            <mat-icon matSuffix (click)="iconValueConfrim = iconValueConfrim === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValueConfrim}}</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+          <button type="submit" mat-flat-button color="primary">Sign Up</button>
+          <button type="button" mat-stroked-button (click)="changeForm('Login')">Login</button>
+         
+        </div>
+      </form> 
+     
+    
+
+
+
+    </mat-card>
+    
+  </section>
+
+</div>
