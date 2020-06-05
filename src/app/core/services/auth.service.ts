@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { environment } from 'src/environments/environment';
 import { Observable, throwError  } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { UserDetailsModel } from '../models/userDetails.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,6 +18,12 @@ export class AuthService {
 
   login(data:any):Observable<any>{
     return this.http.post<any>(this.apiUrl + "login", data, httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  addUser(data:UserDetailsModel):Observable<any>{
+    return this.http.post<any>(this.apiUrl + "user/adduser", data, httpOptions).pipe(
       catchError(this.handleError)
     );
   }

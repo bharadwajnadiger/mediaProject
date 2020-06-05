@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -9,15 +9,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 //Components
 import { LoginComponent } from './login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     CommonModule,
+    RouterModule,
     AuthRoutingModule,
     FlexLayoutModule,
     MatCardModule,
@@ -27,6 +30,7 @@ import { AuthRoutingModule } from './auth-routing.module';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSelectModule,
   ],
   
 })

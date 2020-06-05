@@ -1,27 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AuthResponseModel } from 'src/app/core/models/authResponse.model';
+import * as alertify from 'alertify.js';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   signForm: FormGroup;
-  iconValue="visibility_off";
-  iconValueConfrim="visibility_off";
+  iconValue = "visibility_off";
+  iconValueConfrim = "visibility_off";
   showSignUpForm: boolean;
-  response:AuthResponseModel;
-  constructor( private formBuilder: FormBuilder, private authService : AuthService) {
+  response: AuthResponseModel;
+  subscription: Subscription;
+
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router) {
     this.loginForm = this.formBuilder.group({
-      mobile_number: [ , [Validators.required]],
+      mobile_number: [, [Validators.required]],
       password: [, [Validators.required]],
     });
     this.signForm = this.formBuilder.group({
-      Mail: [ , [Validators.required, Validators.email]],
+      name: [, [Validators.required]],
+      email: [, [Validators.required, Validators.email]],
+      mobile_number: [, [Validators.required]],
+      language: [, [Validators.required]],
+      user_type: [, [Validators.required]],
       password: [, [Validators.required]],
       confirmPassword: [, [Validators.required]],
     })
@@ -31,29 +42,49 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeForm(value){
-    this.iconValue =  "visibility_off" ;
-    this.iconValueConfrim =  "visibility_off" ;
+  changeForm(value) {
+    this.iconValue = "visibility_off";
+    this.iconValueConfrim = "visibility_off";
     this.loginForm.reset();
     this.signForm.reset();
-    this.showSignUpForm = value ==="Sign Up" ? true :false;
+    this.showSignUpForm = value === "Sign Up" ? true : false;
   }
 
-  onSubmitLogin(){
-    console.log(this.loginForm.value);
-    this.authService.login(this.loginForm.value).subscribe( response =>{
-      this.response = response.data;
-      localStorage.set("userDetails", this.response);
-      console.log(this.response);
+  onSubmitLogin() {
+    if (this.loginForm.valid) {
+      this.subscription = this.authService.login(this.loginForm.value).subscribe(response => {
+        this.response = response.data;
+        localStorage.setItem("userDetails", JSON.stringify(this.response));
+        this.router.navigate(['/user']);
+      }, error => {
+        // alertify.set('notifier', 'position', 'bottom-center');
+        // alertify.error(error);
+       // this.router.navigate(['/user']);
+      })
+    }
 
-
-    }, error =>{
-       console.log(error);
-    })
   }
 
-  onSubmitSignup(){
-    console.log(this.signForm.valid);
+  onSubmitSignup() {
+    if (this.signForm.valid) {
+      this.subscription = this.authService.addUser(this.signForm.value).subscribe(response => {
+        console.log(response);
+        this.changeForm("Login");
+      }, error => {
+        // alertify.set('notifier', 'position', 'bottom-center');
+        // alertify.error(error);
+      })
+    }
+
   }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
+  }
+
+
 
 }

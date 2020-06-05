@@ -13,12 +13,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path: 'user',
-    loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule),
-  },
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule),
+  }
+  
 
 ];
-
+//, { preloadingStrategy: PreloadAllModules }
 @NgModule({
   imports: [RouterModule,RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]

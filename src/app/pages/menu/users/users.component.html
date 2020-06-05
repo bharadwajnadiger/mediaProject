@@ -1,0 +1,29 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened style="height:100%;border-right: none;">
+        <mat-toolbar color="primary">
+            <span>App Name</span>
+        </mat-toolbar>
+        <mat-list role="list" >
+            <mat-list-item role="listitem" class="list-item">
+                <mat-icon mat-list-icon class="list-icon">video_library</mat-icon>
+                <div mat-line>show videos</div>
+            </mat-list-item>
+            
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar color="primary" >
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px" style="width:96%;">
+                <!-- <button mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button> -->
+                <!-- <span>App Name</span> -->
+            </div>
+            <button mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+            </button>
+
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

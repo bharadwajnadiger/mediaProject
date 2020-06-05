@@ -87,7 +87,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .login-card{
     width: 350px;
-   
+    max-height: 350px; 
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -100,13 +100,50 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
 }
 
-@media only screen and (max-width: 409px){
+@media only screen and (max-width: 659px){
     .login-card {
         width: 300px;
-       
+        max-height: 320px;
     }
 }
 
+.scroll
+{
+    	//background-color:rgb(0,0,0,0.03);/* background color for division*/
+    	height:400px;
+        overflow-y:scroll;
+        overflow-x: hidden;
+}
+.scroll::-webkit-scrollbar
+{
+    	background-color:rgb(0,0,0,0.03);/* background color for scroll */
+        width:5px;
+}
+.scroll::-webkit-scrollbar-thumb
+{
+    	background-color:rgb(179,179,179,1);/* background color for scroll button */
+}
 
+.container{
+    height:100vh;
+}
+
+.list-item{
+    cursor: pointer;
+
+    &:hover{
+        background-color: darkgrey;
+    }
+    .list-icon{
+        &:hover{
+            background-color: darkgrey;
+        }
+    }
+
+}
+
+.margin-class{
+    margin:10px;
+}
 
 
