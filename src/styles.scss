@@ -125,8 +125,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .container{
-    height:100vh;
+    border-right: none;
+    position: fixed !important;
+    height: 100%;
+    display: block;
+    transform: inherit;
+    overflow-y:hidden;
 }
+
+
 
 .list-item{
     cursor: pointer;

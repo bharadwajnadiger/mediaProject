@@ -1,29 +1,31 @@
-<mat-drawer-container class="container">
-    <mat-drawer mode="side" opened style="height:100%;border-right: none;">
-        <mat-toolbar color="primary">
-            <span>App Name</span>
-        </mat-toolbar>
-        <mat-list role="list" >
+<mat-toolbar color="primary" style="  position: sticky;
+position: -webkit-sticky; /* For macOS/iOS Safari */
+top: 0; /* Sets the sticky toolbar to be on top */
+z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */" >
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px" style="width:96%;">
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button> 
+         <span>App Name</span>
+    </div>
+    <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+</mat-toolbar>
+<mat-drawer-container autosize class="container">
+    <mat-drawer mode="side" opened >
+      
+        <mat-list role="list" style="box-shadow: 2px 0px #00000033;">
             <mat-list-item role="listitem" class="list-item">
                 <mat-icon mat-list-icon class="list-icon">video_library</mat-icon>
-                <div mat-line>show videos</div>
+                <div mat-line>Video Library</div>
             </mat-list-item>
             
         </mat-list>
     </mat-drawer>
-    <mat-drawer-content>
-        <mat-toolbar color="primary" >
-            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px" style="width:96%;">
-                <!-- <button mat-icon-button>
-                    <mat-icon>menu</mat-icon>
-                </button> -->
-                <!-- <span>App Name</span> -->
-            </div>
-            <button mat-icon-button>
-                <mat-icon>account_circle</mat-icon>
-            </button>
-
-        </mat-toolbar>
+    <mat-drawer-content class="scroll">
+      
         <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

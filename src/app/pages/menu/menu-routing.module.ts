@@ -14,7 +14,12 @@ const routes: Routes = [
     {
         path: 'users',
         component:UsersComponent,
-        children : [{
+        children : [ {
+            path: '',
+            redirectTo: 'showvideo',
+            pathMatch: 'full'
+        },
+        {
             path: 'showvideo',
             component:ShowvideoComponent,
         }]
