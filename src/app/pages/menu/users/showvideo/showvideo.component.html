@@ -1,21 +1,27 @@
-<div  fxLayout="row wrap" fxLayout.xs="column wrap"  fxLayoutAlign="start start" >
-   <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+<div  style="position:relative; height:100%;" >
+
+    <div fxLayout="row" fxLayoutAlign="center center"  fxLayoutGap="15px" style=" padding-top:10px;
+    background-color: white;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+    z-index: 1000; ">
+      <mat-form-field appearance="outline" fxFlex="50" fxFlex.xs="80" fxFlex.sm="80">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search">
+        <mat-icon matSuffix style="cursor: pointer;" (click)="onSubmit()">search</mat-icon>
+      </mat-form-field>  
+    </div>
+
+
+  
+<div  fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutAlign="start start" >
+   <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -37,23 +43,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45" style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -75,23 +70,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45" style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -113,23 +97,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45" style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -151,23 +124,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45" style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -189,23 +151,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45" style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -227,23 +178,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -265,23 +205,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -303,23 +232,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -341,23 +259,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -379,23 +286,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -417,23 +313,12 @@
         </mat-card-content>
       
       </mat-card>
-      <mat-card class ="margin-class" fxFlex="23" fxFlex.md="45"style="cursor: pointer;">
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
         
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-            <span style="font-size: 1.m;
-            font-weight: 500;
-            line-height: 1.6rem;
-            max-height: 3.2rem;
-            color:#030303;
-            display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 2;" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -455,5 +340,177 @@
         </mat-card-content>
       
       </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
       
+      </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
+      
+      </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
+      
+      </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
+      
+      </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
+      
+      </mat-card>
+      <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18"fxFlex.md="30" fxFlex.sm="30"style="cursor: pointer;">
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
+            <span class="video-class" fxFlex="95" matTooltip="Info about the action">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>description</mat-icon>
+                <span>Details</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Show Comments</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-content>
+      
+      </mat-card>
 </div>
+<mat-toolbar >
+   
+
+</mat-toolbar>
+<button mat-fab color="primary"  class="fab-class"  matTooltip="Add new video">
+  <mat-icon>add</mat-icon>
+</button>
+</div>
+
+<!-- left: 80%;
+    top: 85%; -->

@@ -12,4 +12,8 @@ export class ShowvideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log("all");
+  }
+
 }

@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" style="  position: sticky;
+position: -webkit-sticky; /* For macOS/iOS Safari */
+top: 0; /* Sets the sticky toolbar to be on top */
+z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */">
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px" style="width:96%;">
+        <button mat-icon-button fxHide="true" fxHide.xs="false" fxHide.sm="false" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{navBar?.name}}</span>
+    </div>
+    <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+</mat-toolbar>
+<mat-sidenav-container  autosize class="container">
+    <mat-sidenav #sidenav [mode]="mode" [opened]="openSideNav" class="sidenav-class">
+        <mat-list role="list" *ngFor="let button of navBar.buttons" >
+            <a mat-list-item class="list-item" [routerLink]="[button.urlPath]" routerLinkActive="list-item-active">
+                <mat-icon mat-list-icon class="list-icon">{{button.icon}}</mat-icon>
+                <div mat-line>{{button.name}}</div>
+            </a>
+
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="scroll">
+        
+        <router-outlet></router-outlet>
+      
+    </mat-sidenav-content>
+</mat-sidenav-container>

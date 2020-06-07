@@ -14,22 +14,27 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ArticlesComponent } from './users/articles/articles.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
-  declarations: [UsersComponent, ShowvideoComponent],
+  declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
+    SharedModule,
     MatMenuModule,
     MatTooltipModule,
     MenuRoutingModule,
-    MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
     MatCardModule,
-    
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class MenuModule { }

@@ -1,0 +1,14 @@
+.video-class{
+   // font-size: 1.0rem;
+            font-weight: 500;
+            line-height: 1.6rem;
+            max-height: 3.2rem;
+            color:#030303;
+            display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
