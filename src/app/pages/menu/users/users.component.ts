@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
         {
           icon : "video_library",
           name: "Video Library",
-          urlPath:"/menu/users/showvideo"
+          urlPath:"/menu/users/videolibrary"
         },
         {
           icon : "article",

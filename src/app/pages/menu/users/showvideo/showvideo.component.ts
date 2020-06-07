@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./showvideo.component.scss']
 })
 export class ShowvideoComponent implements OnInit {
-
+  queryParam= {     "name": "test1",
+  "language": "kannada",
+ "title":"cine actor sumith got accident",
+}
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +17,10 @@ export class ShowvideoComponent implements OnInit {
 
   onSubmit(){
     console.log("all");
+  }
+  
+  deleteVideo(id){
+
   }
 
 }

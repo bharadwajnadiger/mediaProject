@@ -47,7 +47,7 @@
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex="100">
             <mat-label>Mobile Number</mat-label>
-            <input matInput placeholder="Username" formControlName="mobile_number">
+            <input matInput placeholder="Mobile Number" formControlName="mobile_number">
             <mat-icon matSuffix>phonelink_ring</mat-icon>
             <mat-error *ngIf="signForm.get('mobile_number').hasError('required') ">Mobile Number is required</mat-error>
           </mat-form-field>
@@ -62,8 +62,8 @@
           <mat-form-field  appearance="outline" fxFlex="100">
             <mat-label>Choose Language </mat-label>
             <mat-select formControlName="language">
-              <mat-option value="English">English</mat-option>
-              <mat-option value="Kannada">Kannada</mat-option>
+              <mat-option value="english">English</mat-option>
+              <mat-option value="kannada">Kannada</mat-option>
             </mat-select>
             <mat-error *ngIf="signForm.get('language').hasError('required') ">Language is required</mat-error>
           </mat-form-field>

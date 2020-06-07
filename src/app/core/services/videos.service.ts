@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable, throwError  } from 'rxjs';
+import { VideoDetailsModel } from '../models/videoDetails.model';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { UserDetailsModel } from '../models/userDetails.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,33 +12,29 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class VideosService {
   apiUrl = environment.apiUrl;
   constructor(private http:HttpClient) { }
 
-  login(data:any):Observable<any>{
-    return this.http.post<any>(this.apiUrl + "user/login", data, httpOptions).pipe(
+  addVideo(data:VideoDetailsModel):Observable<any>{
+    return this.http.post<any>(this.apiUrl + "dashboard/adddashboard", data, httpOptions).pipe(
       catchError(this.handleError)
     );
   }
 
-  loginEditor(data:any):Observable<any>{
-    return this.http.post<any>(this.apiUrl + "user/login", data, httpOptions).pipe(
-      catchError(this.handleError)
-    );
-  }
-  
-  loginAdmin(data:any):Observable<any>{
-    return this.http.post<any>(this.apiUrl + "user/login", data, httpOptions).pipe(
+  editVideo(data:VideoDetailsModel):Observable<any>{
+    return this.http.put<any>(this.apiUrl + "dashboard/"+ data.userid, data, httpOptions).pipe(
       catchError(this.handleError)
     );
   }
 
-  addUser(data:UserDetailsModel):Observable<any>{
-    return this.http.post<any>(this.apiUrl + "user/adduser", data, httpOptions).pipe(
+  deleteVideo(id):Observable<any>{
+    return this.http.delete<any>(this.apiUrl + "dashboard/"+ id).pipe(
       catchError(this.handleError)
     );
   }
+
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -55,4 +51,5 @@ export class AuthService {
     return throwError(
       'Something bad happened; please try again later.');
   };
+
 }

@@ -18,8 +18,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ArticlesComponent } from './users/articles/articles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { AddvideoComponent } from './users/showvideo/addvideo/addvideo.component';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
-  declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent],
+  declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent, AddvideoComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -34,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
   ]
 })
 export class MenuModule { }

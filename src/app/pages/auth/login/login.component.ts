@@ -54,8 +54,15 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (this.loginForm.valid) {
       this.subscription = this.authService.login(this.loginForm.value).subscribe(response => {
         this.response = response.data;
+        console.log(this.response);
         localStorage.setItem("userDetails", JSON.stringify(this.response));
-        this.router.navigate(['/user']);
+        if(localStorage.getItem("userDetails")){
+          let userDetails =JSON.parse(localStorage.getItem("userDetails"));
+          if(userDetails.user_type ==="USER"){
+            this.router.navigate(['/menu/users']);
+          }
+        }
+      
       }, error => {
         // alertify.set('notifier', 'position', 'bottom-center');
         // alertify.error(error);
