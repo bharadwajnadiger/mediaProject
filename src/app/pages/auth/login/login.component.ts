@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ConfirmedValidator } from 'src/app/core/utilities/confirmPassword.utility';
 import { EncdecService } from 'src/app/core/services/common-services/encdec.service';
+import { AlertService } from 'src/app/core/services/common-services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
     private encdecService:EncdecService,
+    private alertService:AlertService,
     private router: Router) {
     this.loginForm = this.formBuilder.group({
       mobile_number: [, [Validators.required]],
@@ -69,9 +71,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
       
       }, error => {
-        // alertify.set('notifier', 'position', 'bottom-center');
-        // alertify.error(error);
-       // this.router.navigate(['/user']);
+         this.alertService.error("something went wrong", "top-center",3);
       })
     }
 
@@ -83,8 +83,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log(response);
         this.changeForm("Login");
       }, error => {
-        // alertify.set('notifier', 'position', 'bottom-center');
-        // alertify.error(error);
+        this.alertService.error("something went wrong", "top-center",3);
       })
     }
 

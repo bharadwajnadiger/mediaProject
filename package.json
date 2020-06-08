@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~9.0.5",
     "@angular/platform-browser-dynamic": "~9.0.5",
     "@angular/router": "~9.0.5",
+    "@types/crypto-js": "^3.1.47",
     "alertify.js": "^1.0.12",
     "alertifyjs": "^1.13.1",
     "crypto-js": "^4.0.0",
