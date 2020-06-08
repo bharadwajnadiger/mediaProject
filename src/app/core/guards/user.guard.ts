@@ -13,30 +13,30 @@ export class UserGuard implements CanActivate {
     canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        // if (localStorage.getItem("userDetails"))
-        // {
-        //     let userDetails =JSON.parse(localStorage.getItem("userDetails"));
-        //     if(userDetails.user_type){
-        //         if(userDetails.user_type ==="USER"){
-        //            return true;
-        //         }
-        //         this.router.navigate(['/auth']);
-        //         return false;
-        //     }
-        //     else{
-        //         this.router.navigate(['/auth']);
-        //         return false;
-        //     }
+        if (localStorage.getItem("userDetails"))
+        {
+            let userDetails =JSON.parse(localStorage.getItem("userDetails"));
+            if(userDetails.user_type){
+                if(userDetails.user_type ==="USER"){
+                   return true;
+                }
+                this.router.navigate(['/auth']);
+                return false;
+            }
+            else{
+                this.router.navigate(['/auth']);
+                return false;
+            }
             
           
-        // }
-        // else{
+        }
+        else{
            
-        //     this.router.navigate(['/auth']);
-        //     return false;
-        // }
+            this.router.navigate(['/auth']);
+            return false;
+        }
 
-        return true;
+        
        
     }
 }
