@@ -4,8 +4,8 @@
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
 
             <mat-form-field appearance="outline" fxFlex="50">
-                <mat-label>name</mat-label>
-                <input matInput placeholder="name" formControlName="name">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" formControlName="name">
                 <mat-icon matSuffix>format_italic</mat-icon>
                 <mat-error *ngIf="addVideoForm.get('name').hasError('required') ">Name is required</mat-error>
             </mat-form-field>
@@ -17,14 +17,11 @@
                 </mat-select>
                 <mat-error *ngIf="addVideoForm.get('language').hasError('required') ">Language is required</mat-error>
             </mat-form-field>
-
-           
-
         </div>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
             <mat-form-field appearance="outline" fxFlex="100">
-                <mat-label>title</mat-label>
-                <textarea  matInput  placeholder="title" formControlName="title"></textarea>
+                <mat-label>Description</mat-label>
+                <textarea  matInput  placeholder="Description" formControlName="title"></textarea>
                 
                 <mat-error *ngIf="addVideoForm.get('title').hasError('required') ">Title is required</mat-error>
             </mat-form-field>

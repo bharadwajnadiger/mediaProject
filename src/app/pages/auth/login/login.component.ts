@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AuthResponseModel } from 'src/app/core/models/authResponse.model';
-import * as alertify from 'alertify.js';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ConfirmedValidator } from 'src/app/core/utilities/confirmPassword.utility';
 
 @Component({
   selector: 'app-login',
@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       user_type: [, [Validators.required]],
       password: [, [Validators.required]],
       confirmPassword: [, [Validators.required]],
+    }, { 
+      validator: ConfirmedValidator('password', 'confirmPassword')
     })
 
   }

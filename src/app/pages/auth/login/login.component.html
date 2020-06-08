@@ -17,6 +17,7 @@
             <input matInput [type]="iconValue === 'visibility_off' ? 'password' : 'text'" placeholder="Password" formControlName="password">
             <mat-icon matSuffix (click)="iconValue =iconValue === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValue}}</mat-icon>
             <mat-error *ngIf="loginForm.get('password').hasError('required') ">password is required</mat-error>
+            
           </mat-form-field>
         </div>
   
@@ -77,6 +78,8 @@
             <mat-label>Confirm Password</mat-label>
             <input matInput [type]="iconValueConfrim === 'visibility_off' ? 'password' : 'text'" placeholder="Confirm Password" formControlName="confirmPassword">
             <mat-icon matSuffix (click)="iconValueConfrim = iconValueConfrim === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValueConfrim}}</mat-icon>
+            <mat-error *ngIf="signForm.get('confirmPassword').hasError('required') ">Confirm password is required</mat-error>
+            <mat-error *ngIf="signForm.get('confirmPassword').errors.confirmedValidator ">Password and Confirm Password must match.</mat-error>
           </mat-form-field>
         </div>
   
