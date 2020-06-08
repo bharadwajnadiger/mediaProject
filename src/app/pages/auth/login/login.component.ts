@@ -5,6 +5,7 @@ import { AuthResponseModel } from 'src/app/core/models/authResponse.model';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ConfirmedValidator } from 'src/app/core/utilities/confirmPassword.utility';
+import { EncdecService } from 'src/app/core/services/common-services/encdec.service';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
+    private encdecService:EncdecService,
     private router: Router) {
     this.loginForm = this.formBuilder.group({
       mobile_number: [, [Validators.required]],
@@ -57,9 +59,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.subscription = this.authService.login(this.loginForm.value).subscribe(response => {
         this.response = response.data;
         console.log(this.response);
-        localStorage.setItem("userDetails", JSON.stringify(this.response));
+        
+        localStorage.setItem("userDetails", this.encdecService.encdec( JSON.stringify(this.response),"encrypt"));
         if(localStorage.getItem("userDetails")){
-          let userDetails =JSON.parse(localStorage.getItem("userDetails"));
+          let userDetails =JSON.parse(this.encdecService.encdec(localStorage.getItem("userDetails"), "decrypt"));
           if(userDetails.user_type ==="USER"){
             this.router.navigate(['/menu/users']);
           }

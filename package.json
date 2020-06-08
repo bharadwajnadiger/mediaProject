@@ -24,6 +24,7 @@
     "@angular/router": "~9.0.5",
     "alertify.js": "^1.0.12",
     "alertifyjs": "^1.13.1",
+    "crypto-js": "^4.0.0",
     "ngx-spinner": "^9.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
