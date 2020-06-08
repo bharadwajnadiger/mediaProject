@@ -18,7 +18,7 @@ export class AddvideoComponent implements OnInit, OnDestroy {
   constructor(private formBuilder: FormBuilder, private videoService:VideosService,private router: Router, private route:ActivatedRoute) {
     this.addVideoForm = this.formBuilder.group({
       name: [, [Validators.required]],
-      title: [, [Validators.required]],
+      title: [],
       language: [, [Validators.required]],
       userid:[]
     })
