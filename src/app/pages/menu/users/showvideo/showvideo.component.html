@@ -1,6 +1,6 @@
 <div style="position:relative; height:100%;">
 
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px" style=" padding-top:10px;
+  <!-- <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px" style=" padding-top:10px;
     background-color: white;
     position: -webkit-sticky;
   position: sticky;
@@ -11,26 +11,28 @@
       <input matInput placeholder="Search">
       <mat-icon matSuffix style="cursor: pointer;" (click)="onSubmit()">search</mat-icon>
     </mat-form-field>
-  </div>
+  </div> -->
 
 
 
   <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutAlign="start start">
-    <mat-card class="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30"
-      style="cursor: pointer;">
-
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200"
-        alt="Photo of a Shiba Inu">
+    <mat-card class="margin-class"  fxFlex="30" fxFlex.lg="30" fxFlex.xl="30" fxFlex.md="30" fxFlex.sm="45"
+      style="cursor: pointer;" *ngFor="let video of videos">
+      <video style="width:100%;" controls>
+        <source [src]="video.videourl" type="video/mp4">
+          </video>
+      <!-- <cl-video style="width: 100%;" public-id="race_road_car" controls="true" loop="true"
+        fallback-content="Your browser does not support HTML5 video tags.">
+        <cl-transformation height="360" width="480" quality="70" duration="10" crop="pad"> </cl-transformation>
+      </cl-video> -->
       <mat-card-content>
         <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95"
-            matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New
-            virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
+          <span class="video-class" fxFlex="95" [matTooltip]="video.title"> {{video.title}}</span>
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
+            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" [queryParams]="video">
               <mat-icon>create</mat-icon>
               <span>Edit</span>
             </button>
@@ -38,46 +40,11 @@
               <mat-icon>description</mat-icon>
               <span>Details</span>
             </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-
-    </mat-card>
-    <mat-card class="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30"
-      style="cursor: pointer;">
-
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200"
-        alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95"
-            matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New
-            virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']">
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
             <button mat-menu-item>
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
               <mat-icon>subject</mat-icon>
               <span>Show Comments</span>
             </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
+            <button mat-menu-item (click)="deleteVideo(video._id)">
               <mat-icon>delete</mat-icon>
               <span>Delete</span>
             </button>
@@ -86,382 +53,8 @@
       </mat-card-content>
 
     </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']" >
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-    <mat-card class ="margin-class" fxFlex="18" fxFlex.lg="18" fxFlex.xl="18" fxFlex.md="30" fxFlex.sm="30" style="cursor: pointer;">
-        
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
-          <span class="video-class" fxFlex="95" matTooltip="New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed">New virus Vs old epidemiology: Why Swedish Covid strategy, hailed as model for the world, collapsed</span>
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxFlex="5">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/menu/users/video'+'/edit']"  [queryParams]="queryParam">
-              <mat-icon>create</mat-icon>
-              <span>Edit</span>
-            </button>
-            <button mat-menu-item >
-              <mat-icon>description</mat-icon>
-              <span>Details</span>
-            </button>
-                 <button mat-menu-item>
-              <mat-icon>subject</mat-icon>
-              <span>Show Comments</span>
-            </button>
-            <button mat-menu-item (click)="deleteVideo(queryParam)">
-              <mat-icon>delete</mat-icon>
-              <span>Delete</span>
-            </button>
-            
-          </mat-menu>
-        </div>
-      </mat-card-content>
-    
-    </mat-card>
-
   </div>
-  <mat-toolbar>
+  <mat-toolbar style="background-color: transparent;">
 
 
   </mat-toolbar>
@@ -470,6 +63,8 @@
     <mat-icon>add</mat-icon>
   </button>
 </div>
-
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "red" type = "ball-spin-clockwise-fade" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <!-- left: 80%;
     top: 85%; -->
+
+   

@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { VideosService } from 'src/app/core/services/videos.service';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from 'src/app/core/services/common-services/alert.service';
 
 @Component({
   selector: 'app-addvideo',
@@ -10,78 +11,104 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./addvideo.component.scss']
 })
 export class AddvideoComponent implements OnInit, OnDestroy {
-  addVideoForm:FormGroup;
+  addVideoForm: FormGroup;
   subscription: Subscription;
   routeResponse: any;
   title: string;
-
-  constructor(private formBuilder: FormBuilder, private videoService:VideosService,private router: Router, private route:ActivatedRoute) {
+  checked: boolean;
+  constructor(private formBuilder: FormBuilder,
+    private videoService: VideosService,
+    private alertService: AlertService,
+    private router: Router,
+    private cd: ChangeDetectorRef,
+    private route: ActivatedRoute) {
     this.addVideoForm = this.formBuilder.group({
       name: [, [Validators.required]],
-      title: [],
+      title: [, [Validators.required]],
       language: [, [Validators.required]],
-      userid:[]
+      video: [, [Validators.required]],
+      userid: [],
+      published: [],
+      feedback: []
     })
-    this.route.params.subscribe( response =>{
+    this.route.params.subscribe(response => {
       this.routeResponse = response.type;
-      if(this.routeResponse){
-        if(this.routeResponse == "add"){
-          this.title="Add video";
+      if (this.routeResponse) {
+        if (this.routeResponse == "add") {
+          this.title = "Add video";
         }
-        else if(this.routeResponse == "edit"){
-          this.title="Edit video";
-          this.route.queryParams.subscribe( response =>{
-            if(response.name){
+        else if (this.routeResponse == "edit") {
+          this.title = "Edit video";
+          this.route.queryParams.subscribe(response => {
+            if (response.name) {
               this.addVideoForm.patchValue(response);
+              this.checked = this.addVideoForm.get("published").value === "yes" ? true : false;
             }
-            else{
+            else {
               this.router.navigate(['/menu/users/videolibrary']);
             }
           })
         }
-        else{
+        else {
           this.router.navigate(['/menu/users/videolibrary']);
         }
       }
-      else{
+      else {
         this.router.navigate(['/menu/users/videolibrary']);
       }
     })
-   
-   
-   
-   }
+
+
+
+  }
+
+  onFileSelect(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.addVideoForm.get('video').setValue(file);
+    }
+  }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  change(event) {
+    this.addVideoForm.get("published").patchValue(event.checked === true ? "yes" : "no");
+  }
+
+ 
+
+  onSubmit() {
     if (this.addVideoForm.valid) {
-      if(this.routeResponse ==="add"){
-        let userDetails =JSON.parse(localStorage.getItem("userDetails"));
+      let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+      if (userDetails._id) {
         this.addVideoForm.value.userid = userDetails._id;
-        this.subscription = this.videoService.addVideo(this.addVideoForm.value).subscribe(response => {      
-              this.router.navigate(['/menu/users/videolibrary']);
-            
-        }, error => {
-          // alertify.set('notifier', 'position', 'bottom-center');
-          // alertify.error(error);
-         // this.router.navigate(['/user']);
-        })
+        if (this.routeResponse === "add") {
+          this.subscription = this.videoService.addVideo(this.addVideoForm.value).subscribe(response => {
+            this.alertService.success("Successfully Added", "top-center", 3);
+            this.router.navigate(['/menu/users/videolibrary']);
+          }, error => {
+            this.alertService.error("something went wrong, please try again", "top-center", 3);
+          })
+        }
+        if (this.routeResponse === "edit") {
+          this.subscription = this.videoService.editVideo(this.addVideoForm.value).subscribe(response => {
+            this.router.navigate(['/menu/users/videolibrary']);
+          }, error => {
+            this.alertService.error("something went wrong, please try again", "top-center", 3);
+          })
+        }
       }
-      if(this.routeResponse ==="edit"){
-        let userDetails =JSON.parse(localStorage.getItem("userDetails"));
-        this.addVideoForm.value.userid = userDetails._id;
-        this.subscription = this.videoService.editVideo(this.addVideoForm.value).subscribe(response => {      
-              this.router.navigate(['/menu/users/videolibrary']);
-            
-        }, error => {
-          // alertify.set('notifier', 'position', 'bottom-center');
-          // alertify.error(error);
-         // this.router.navigate(['/user']);
-        })
+      else {
+        this.router.navigate(['/menu/users/videolibrary']);
       }
-     
+
+
+    }
+    else {
+      if (!this.addVideoForm.get("video").valid) {
+        this.alertService.error("choose video file to upload", "top-center", 3);
+      }
     }
   }
 

@@ -15,13 +15,17 @@ export class AlertService {
     }
   }
 
-  confirm(message: string, okCallback: () => any) {
+  confirm(message: string , type) {
     alertify.confirm(message, function(e) {
       if (e) {
-        okCallback();
-      } else {}
+        this.okCallback(type);
+      } else {
+        
+      }
     });
   }
+
+  
 
    success(message: string,position:string, time:number) {
     alertify.set('notifier','delay', time);

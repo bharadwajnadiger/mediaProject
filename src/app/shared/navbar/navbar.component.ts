@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { HostListener } from "@angular/core";
 import { MatSidenav, MatDrawer } from '@angular/material/sidenav';
 import { NavBarModel } from '../nav-bar.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
   @ViewChild('sidenav', { static: true}) sidenav: MatDrawer;
   mode:string="side";
   openSideNav:boolean;
-  constructor() { 
+  constructor(private router:Router) { 
     this.getScreenSize();
   }
 
@@ -32,6 +33,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getScreenSize();
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/auth']);
   }
 
 

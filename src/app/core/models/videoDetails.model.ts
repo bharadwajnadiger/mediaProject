@@ -3,4 +3,7 @@ export class VideoDetailsModel{
     title:string;
     language: string;
     userid:string;
+    published: string;
+    feedback:string;
+    video:any;
 }

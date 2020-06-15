@@ -62,9 +62,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.response = response.data;
         console.log(this.response);
         
-        localStorage.setItem("userDetails", this.encdecService.encdec( JSON.stringify(this.response),"encrypt"));
+        localStorage.setItem("userDetails", JSON.stringify(this.response));
         if(localStorage.getItem("userDetails")){
-          let userDetails =JSON.parse(this.encdecService.encdec(localStorage.getItem("userDetails"), "decrypt"));
+          let userDetails =JSON.parse(localStorage.getItem("userDetails"));
           if(userDetails.user_type ==="USER"){
             this.router.navigate(['/menu/users']);
           }
@@ -79,6 +79,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmitSignup() {
     if (this.signForm.valid) {
+      
       this.subscription = this.authService.addUser(this.signForm.value).subscribe(response => {
         console.log(response);
         this.changeForm("Login");
@@ -86,6 +87,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.alertService.error("something went wrong", "top-center",3);
       })
     }
+    
 
   }
 

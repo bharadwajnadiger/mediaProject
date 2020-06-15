@@ -8,8 +8,8 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */"
         </button>
         <span>{{navBar?.name}}</span>
     </div>
-    <button mat-icon-button>
-        <mat-icon>account_circle</mat-icon>
+    <button mat-icon-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
     </button>
 
 </mat-toolbar>

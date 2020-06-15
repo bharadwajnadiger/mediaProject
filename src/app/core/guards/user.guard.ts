@@ -16,7 +16,7 @@ export class UserGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         if (localStorage.getItem("userDetails"))
         {
-            let userDetails =JSON.parse(this.encdecService.encdec(localStorage.getItem("userDetails"), "decrypt"));
+            let userDetails =JSON.parse(localStorage.getItem("userDetails"));
             if(userDetails.user_type){
                 if(userDetails.user_type ==="USER"){
                    return true;
