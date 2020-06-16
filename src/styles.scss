@@ -79,6 +79,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    
 }
 
+.font-bold{
+    font-weight: bold;
+}
   
 .login-section {
     vertical-align: middle;
@@ -98,6 +101,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .form-header{
         font-weight: bold;   
     }
+}
+
+.avatar-class{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
 }
 
 
@@ -150,6 +159,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 }
 
+.anchor-link{
+    text-decoration: none !important;
+    padding-top: 0px !important;
+    cursor: pointer;
+    border:none !important;
+}
+
 .list-item-active{
     text-decoration: none !important;
     padding-top: 0px !important;
@@ -170,6 +186,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .margin-class{
     margin:10px;
+}
+
+.margin-top{
+    margin-top:10px;
+}
+
+.margin-bottom{
+    margin-bottom:10px;
 }
 
 .sidenav-class{

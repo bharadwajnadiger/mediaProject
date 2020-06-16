@@ -20,15 +20,17 @@ import { AddvideoComponent } from './users/showvideo/addvideo/addvideo.component
 import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSpinnerModule } from "ngx-spinner";
+import {MatListModule} from '@angular/material/list';
 
 import { CloudinaryModule } from '@cloudinary/angular-5.x';
 import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
+import { VideodetailsComponent } from './users/showvideo/videodetails/videodetails.component';
   export  const cloudinary = {
   Cloudinary: CloudinaryCore
 }
 
 @NgModule({
-  declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent, AddvideoComponent],
+  declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent, AddvideoComponent, VideodetailsComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -47,7 +49,8 @@ import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
     MatSelectModule,
     MatCheckboxModule,
     NgxSpinnerModule,
-    CloudinaryModule.forRoot(cloudinary, { cloud_name: 'demo'}),
+    MatListModule,
+   
   ]
 })
 export class MenuModule { }

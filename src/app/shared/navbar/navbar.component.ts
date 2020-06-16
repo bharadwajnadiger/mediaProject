@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { HostListener } from "@angular/core";
-import { MatSidenav, MatDrawer } from '@angular/material/sidenav';
+import { MatDrawer } from '@angular/material/sidenav';
 import { NavBarModel } from '../nav-bar.model';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -30,7 +31,7 @@ export class NavbarComponent implements OnInit {
           this.openSideNav= true;
         }
   }
-
+  
   ngOnInit(): void {
     this.getScreenSize();
   }

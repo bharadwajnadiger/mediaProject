@@ -1,0 +1,140 @@
+<!-- <div fxLayout="column" fxShow.sm="true" fxShow.xs="true">
+    <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayout.sm="column wrap" fxLayoutAlign="start start"
+        class="margin-class" style="cursor: pointer;">
+        <video fxFlex="50" fxFlex.lg="50" fxFlex.xl="50" fxFlex.md="50"  controls>
+            <source style="width:100%;" [src]="video.videourl" type="video/mp4">
+        </video>
+        <div fxFlex="50" fxFlex.lg="50" fxFlex.xl="50" fxFlex.md="50">
+            <div fxLayout="column wrap" fxLayoutAlign="start start">
+                <h1 class="video-desc">{{video.title}}</h1>
+                <span class="video-desc" *ngIf="video.name"><span class="font-bold"> Name :</span> {{video.name}}</span>
+                <span class="video-desc" *ngIf="video.language"><span class="font-bold">Language :</span>
+                    {{video.language}}</span>
+                <span class="video-desc" *ngIf="video.updatedAt"><span class="font-bold">Uploade Date :</span>
+                    {{video.updatedAt | date : 'd MMM y'}}</span>
+                <div fxLayout="row " fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="start start"
+                    fxLayoutGap="3px" class="video-desc">
+                    <span class="font-bold">Description:</span>
+                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of
+                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                        also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+                        in
+                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="53" fxFlex.sm="100" fxFlex.xs="100">
+            <span class="margin-class font-bold">1,017 Comments</span>
+            <mat-list role="list" >
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span  style="font-size: 16px;">Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has ewqag</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span>Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span>Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+    </div>
+</div> -->
+<div class="margin-class"  fxLayout="row" fxHide.sm="true" fxHide.xs="true">
+    <div fxFlex="50" fxLayout="column" fxLayoutGap="15px">
+        <video  height="300" controls>
+            <source [src]="video.videourl" type="video/mp4">
+        </video>
+        <div>
+            <span class="margin-class font-bold">1,017 Comments</span>
+            <mat-list role="list" >
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span  style="font-size: 16px;">Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has ewqag</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span>Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item role="listitem"  class="margin-top">
+                    <div fxLayout="row">
+                        <img class="avatar-class" src="https://www.w3schools.com/howto/img_avatar.png">
+                        <div fxLayout="column" class="video-desc">
+                            <span>Bharadwaj Ramanath Nadiger</span>
+                            <span style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typeset
+                                industry. Lorem Ipsum has</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <div  fxFlex="50" fxLayout="column">
+        <div fxLayout="column wrap" fxLayoutAlign="start start">
+            <h1 class="video-desc">{{video.title}}</h1>
+            <span class="video-desc" *ngIf="video.name"><span class="font-bold"> Name :</span> {{video.name}}</span>
+            <span class="video-desc" *ngIf="video.language"><span class="font-bold">Language :</span>
+                {{video.language}}</span>
+            <span class="video-desc" *ngIf="video.updatedAt"><span class="font-bold">Uploade Date :</span>
+                {{video.updatedAt | date : 'd MMM y'}}</span>
+            <div fxLayout="row " fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="start start"
+                fxLayoutGap="3px" class="video-desc">
+                <span class="font-bold">Description:</span>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                    been
+                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                    of
+                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+                    in
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<mat-toolbar style="background-color: transparent;">
+
+
+</mat-toolbar>
