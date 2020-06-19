@@ -31,6 +31,8 @@
     "cl-video-component": "^1.0.0",
     "cloudinary-core": "^2.8.2",
     "crypto-js": "^4.0.0",
+    "filepond": "^4.17.1",
+    "ngx-filepond": "^5.0.1",
     "ngx-spinner": "^9.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
