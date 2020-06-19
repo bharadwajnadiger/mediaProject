@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mediaProject",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,13 +31,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "./node_modules/alertifyjs/build/css/alertify.min.css",
-              "./node_modules/alertifyjs/build/css/themes/bootstrap.min.css"
+              "./node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
+              "./node_modules/filepond/dist/filepond.min.css"
             ],
             "scripts": [ 
               "./node_modules/alertifyjs/build/alertify.min.js",
               "./node_modules/crypto-js/crypto-js.js",
-              "node_modules/lodash/lodash.js",
-              "node_modules/cloudinary-core/cloudinary-core.js"
+              "node_modules/lodash/lodash.js"
             ]
           },
           "configurations": {

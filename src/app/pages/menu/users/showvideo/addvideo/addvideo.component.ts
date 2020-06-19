@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { VideosService } from 'src/app/core/services/videos.service';
 import { Subscription } from 'rxjs';
@@ -15,7 +15,32 @@ export class AddvideoComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   routeResponse: any;
   title: string;
-  checked: boolean;
+ 
+ // filepond starts
+ @ViewChild('myPond') myPond: any;
+
+ pondOptions = {
+   class: 'my-filepond',
+   labelIdle: 'Add thumbnail image here',
+   acceptedFileTypes: 'image/jpeg, image/png'
+ }
+
+ pondFiles = [
+ ]
+
+ pondHandleInit() {
+   console.log('FilePond has initialised', this.myPond);
+ }
+
+ pondHandleAddFile(event: any) {
+   console.log('A file was added', event);
+   
+   // const file = event.target.files[0];
+   // this.addVideoForm.get('video').setValue( event.file);
+  
+ }
+ // ilepond ends
+
   constructor(private formBuilder: FormBuilder,
     private videoService: VideosService,
     private alertService: AlertService,
@@ -42,7 +67,7 @@ export class AddvideoComponent implements OnInit, OnDestroy {
           this.route.queryParams.subscribe(response => {
             if (response.name) {
               this.addVideoForm.patchValue(response);
-              this.checked = this.addVideoForm.get("published").value === "yes" ? true : false;
+            
             }
             else {
               this.router.navigate(['/menu/users/videolibrary']);
@@ -72,9 +97,7 @@ export class AddvideoComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  change(event) {
-    this.addVideoForm.get("published").patchValue(event.checked === true ? "yes" : "no");
-  }
+ 
 
  
 

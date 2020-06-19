@@ -18,13 +18,7 @@
   <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutAlign="start start">
     <mat-card  class="margin-class"  fxFlex="30" fxFlex.lg="30" fxFlex.xl="30" fxFlex.md="30" fxFlex.sm="45"
       style="cursor: pointer;" *ngFor="let video of videos">
-      <video style="width:100%;" controls [routerLink]="['/menu/users/videodetails']"  [queryParams]="video">
-        <source [src]="video.videourl" type="video/mp4">
-          </video>
-      <!-- <cl-video style="width: 100%;" public-id="race_road_car" controls="true" loop="true"
-        fallback-content="Your browser does not support HTML5 video tags.">
-        <cl-transformation height="360" width="480" quality="70" duration="10" crop="pad"> </cl-transformation>
-      </cl-video> -->
+      <img src="https://www.wyzowl.com/wp-content/uploads/2019/09/YouTube-thumbnail-size-guide-best-practices-top-examples.png" style="height:200px;width:100%" alt="">
       <mat-card-content>
         <div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="3px">
           <a class="video-class anchor-link" fxFlex="95" [matTooltip]="video.title" [routerLink]="['/menu/users/videodetails']"  [queryParams]="video"> {{video.title}}</a>

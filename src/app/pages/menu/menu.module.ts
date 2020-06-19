@@ -22,12 +22,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {MatListModule} from '@angular/material/list';
 
-import { CloudinaryModule } from '@cloudinary/angular-5.x';
-import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
+import { FilePondModule, registerPlugin } from 'ngx-filepond';
 import { VideodetailsComponent } from './users/showvideo/videodetails/videodetails.component';
-  export  const cloudinary = {
-  Cloudinary: CloudinaryCore
-}
 
 @NgModule({
   declarations: [UsersComponent, ShowvideoComponent, ArticlesComponent, AddvideoComponent, VideodetailsComponent],
@@ -50,7 +46,7 @@ import { VideodetailsComponent } from './users/showvideo/videodetails/videodetai
     MatCheckboxModule,
     NgxSpinnerModule,
     MatListModule,
-   
+    FilePondModule
   ]
 })
 export class MenuModule { }

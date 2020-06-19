@@ -51,15 +51,16 @@
             <input matInput placeholder="Mobile Number" formControlName="mobile_number">
             <mat-icon matSuffix>phonelink_ring</mat-icon>
             <mat-error *ngIf="signForm.get('mobile_number').hasError('required') ">Mobile Number is required</mat-error>
+            <mat-error *ngIf="signForm.get('mobile_number').hasError('pattern') ">Mobile Number is not valid</mat-error>
           </mat-form-field>
-          <mat-form-field  appearance="outline" fxFlex="100">
+          <!-- <mat-form-field  appearance="outline" fxFlex="100">
             <mat-label>Choose Type </mat-label>
             <mat-select formControlName="user_type">
               <mat-option value="ADMIN">Editor</mat-option>
               <mat-option value="USER">User</mat-option>
             </mat-select>
             <mat-error *ngIf="signForm.get('user_type').hasError('required') ">User Type is required</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
           <mat-form-field  appearance="outline" fxFlex="100">
             <mat-label>Choose Language </mat-label>
             <mat-select formControlName="language">
@@ -79,7 +80,7 @@
             <input matInput [type]="iconValueConfrim === 'visibility_off' ? 'password' : 'text'" placeholder="Confirm Password" formControlName="confirmPassword">
             <mat-icon matSuffix (click)="iconValueConfrim = iconValueConfrim === 'visibility_off' ? 'visibility_on' : 'visibility_off'">{{iconValueConfrim}}</mat-icon>
             <mat-error *ngIf="signForm.get('confirmPassword').hasError('required') ">Confirm password is required</mat-error>
-            <mat-error *ngIf="signForm.get('confirmPassword').errors.confirmedValidator ">Password and Confirm Password must match.</mat-error>
+            <mat-error *ngIf="signForm.get('confirmPassword').errors.ConfirmedValidator ">Password and Confirm Password must match.</mat-error>
           </mat-form-field>
         </div>
   

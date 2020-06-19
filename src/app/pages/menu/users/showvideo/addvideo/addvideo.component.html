@@ -19,17 +19,23 @@
             </mat-form-field>
         </div>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
-            <mat-form-field appearance="outline" fxFlex="100">
+            <mat-form-field appearance="outline" fxFlex="50">
                 <mat-label>Title</mat-label>
                 <textarea matInput placeholder="Title" formControlName="title"></textarea>
 
-                 <mat-error *ngIf="addVideoForm.get('title').hasError('required') ">Title is required</mat-error> 
+                <mat-error *ngIf="addVideoForm.get('title').hasError('required') ">Title is required</mat-error>
             </mat-form-field>
+            <file-pond #myPond [options]="pondOptions" [files]="pondFiles" (oninit)="pondHandleInit()"
+            (onaddfile)="pondHandleAddFile($event)"  fxFlex="50">
+        </file-pond>
 
         </div>
-        <input class="margin-class" type="file" placeholder="Choose Video" (change)="onFileSelect($event)"
-            accept="video/mp4,video/x-m4v,video/*" >
-        <mat-checkbox class="margin-class" (change)="change($event)" [checked]="checked">Publish Video</mat-checkbox>
+        <!-- <input class="margin-class" type="file" placeholder="Choose Video" (change)="onFileSelect($event)"
+            accept="video/mp4,video/x-m4v,video/*"> -->
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+          
+        </div>
+
         <div fxLayout="column" fxLayoutAlign="center center " fxLayoutGap="10px">
             <button type="submit" mat-flat-button color="primary">Save</button>
         </div>
