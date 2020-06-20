@@ -69,6 +69,12 @@ body {
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// .page-container{
+//     max-width: 1325px;
+//     margin: 0 auto;
+    
+// }
+
 .login-page{
     height: 100vh;
    width:100vw;
@@ -229,6 +235,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         top:85%;
     }
 }
+
+#upload_image{visibility: hidden;}
+.video_upload_contaniner{ 
+   // border-style: dotted;
+}
+.video_container{ width:600px;height:600px;border:2px dashed gray;border-radius:3px;padding-left: 75px;padding-right: 75px;cursor:pointer; }
+.video_upload_contaniner img{width:400px;height:400px;}
+.h4{margin-top:-25px;}
+.video_condition{color:gray;}
 
 // canvas wrapper
 // height: 600px;

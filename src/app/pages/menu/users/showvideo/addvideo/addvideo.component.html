@@ -19,21 +19,66 @@
             </mat-form-field>
         </div>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
-            <mat-form-field appearance="outline" fxFlex="50">
+            <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Title</mat-label>
                 <textarea matInput placeholder="Title" formControlName="title"></textarea>
 
                 <mat-error *ngIf="addVideoForm.get('title').hasError('required') ">Title is required</mat-error>
             </mat-form-field>
-            <file-pond #myPond [options]="pondOptions" [files]="pondFiles" (oninit)="pondHandleInit()"
-            (onaddfile)="pondHandleAddFile($event)"  fxFlex="50">
-        </file-pond>
+          
 
         </div>
+        <!-- <div class="video_upload_contaniner">
+			<label for="upload_image" >
+				<div class="video_container">
+					
+						<img src="assets/images/cloud.jpg"/>
+						<h4 class="h4">Select video file to upload</h4>
+					
+					
+					<div class="video_condition">
+						<ul class="condition_list">
+							<li>File size less than 300MB</li>
+							<li>Video width:more than 640px, the width of the video should be bigger than the height</li>
+							<li>Supported formats: .avi, .mov, .mp4, .flv, .wmv, .mkv</li> 
+							<li>Video Duration: more than 30 seconds and less than 20 minutes</li>
+						</ul>
+					</div>
+				</div>
+
+
+			</label>
+			<input type="file" id="upload_image" >
+		</div> -->
         <!-- <input class="margin-class" type="file" placeholder="Choose Video" (change)="onFileSelect($event)"
             accept="video/mp4,video/x-m4v,video/*"> -->
+            <!-- <file-pond #myPond [options]="pondOptions" [files]="pondFiles" (oninit)="pondHandleInit()"
+            (onaddfile)="pondHandleAddFile($event)"  fxFlex="50">
+        </file-pond> -->
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
-          
+            
+        <div class="video_upload_contaniner"  fxFlex="100">
+			<label for="upload_image" >
+				<div class="video_container">
+					
+						<img style="height: 200px;" src="assets/images/cloud.jpg"/>
+						<h4 class="h4">Select video file to upload</h4>
+					
+					
+					<div class="video_condition">
+						<ul class="condition_list">
+							<li>File size less than 300MB</li>
+							<li>Video width:more than 640px, the width of the video should be bigger than the height</li>
+							<li>Supported formats: .avi, .mov, .mp4, .flv, .wmv, .mkv</li> 
+							<li>Video Duration: more than 30 seconds and less than 20 minutes</li>
+						</ul>
+					</div>
+				</div>
+
+
+			</label>
+			<input type="file" id="upload_image" >
+		</div>
         </div>
 
         <div fxLayout="column" fxLayoutAlign="center center " fxLayoutGap="10px">
