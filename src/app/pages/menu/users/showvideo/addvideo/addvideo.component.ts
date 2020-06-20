@@ -52,6 +52,7 @@ export class AddvideoComponent implements OnInit, OnDestroy {
       title: [, [Validators.required]],
       language: [, [Validators.required]],
       video: [, [Validators.required]],
+      category:[],
       userid: [],
       published: [],
       feedback: []
@@ -88,6 +89,7 @@ export class AddvideoComponent implements OnInit, OnDestroy {
   }
 
   onFileSelect(event) {
+    console.log(event);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.addVideoForm.get('video').setValue(file);

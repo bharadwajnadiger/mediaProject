@@ -1,15 +1,18 @@
-<mat-card fxLayout="column" fxLayoutAlign="start " class="margin-class scroll" fxLayoutGap="10px">
+<div fxLayout="column" fxLayoutAlign="center center " fxLayoutAlign.xs="start" class="margin-class scroll" fxLayoutGap="10px">
     <form [formGroup]="addVideoForm" (ngSubmit)="onSubmit()">
         <h1>{{title}}</h1>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
 
-            <mat-form-field appearance="outline" fxFlex="50">
+            <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Name</mat-label>
                 <input matInput placeholder="Name" formControlName="name">
                 <mat-icon matSuffix>format_italic</mat-icon>
                 <mat-error *ngIf="addVideoForm.get('name').hasError('required') ">Name is required</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="50">
+           
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Choose Language </mat-label>
                 <mat-select formControlName="language">
                     <mat-option value="english">English</mat-option>
@@ -20,69 +23,61 @@
         </div>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
             <mat-form-field appearance="outline" fxFlex="100">
+                <mat-label>Choose Category </mat-label>
+                <mat-select formControlName="category">
+                    <mat-option value="category 1">category 1</mat-option>
+                    <mat-option value="category 2">category 2</mat-option>
+                </mat-select>
+              
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Title</mat-label>
                 <textarea matInput placeholder="Title" formControlName="title"></textarea>
 
                 <mat-error *ngIf="addVideoForm.get('title').hasError('required') ">Title is required</mat-error>
             </mat-form-field>
-          
+
 
         </div>
-        <!-- <div class="video_upload_contaniner">
-			<label for="upload_image" >
-				<div class="video_container">
-					
-						<img src="assets/images/cloud.jpg"/>
-						<h4 class="h4">Select video file to upload</h4>
-					
-					
-					<div class="video_condition">
-						<ul class="condition_list">
-							<li>File size less than 300MB</li>
-							<li>Video width:more than 640px, the width of the video should be bigger than the height</li>
-							<li>Supported formats: .avi, .mov, .mp4, .flv, .wmv, .mkv</li> 
-							<li>Video Duration: more than 30 seconds and less than 20 minutes</li>
-						</ul>
-					</div>
-				</div>
-
-
-			</label>
-			<input type="file" id="upload_image" >
-		</div> -->
-        <!-- <input class="margin-class" type="file" placeholder="Choose Video" (change)="onFileSelect($event)"
-            accept="video/mp4,video/x-m4v,video/*"> -->
-            <!-- <file-pond #myPond [options]="pondOptions" [files]="pondFiles" (oninit)="pondHandleInit()"
-            (onaddfile)="pondHandleAddFile($event)"  fxFlex="50">
-        </file-pond> -->
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
-            
-        <div class="video_upload_contaniner"  fxFlex="100">
-			<label for="upload_image" >
-				<div class="video_container">
-					
-						<img style="height: 200px;" src="assets/images/cloud.jpg"/>
-						<h4 class="h4">Select video file to upload</h4>
-					
-					
-					<div class="video_condition">
-						<ul class="condition_list">
-							<li>File size less than 300MB</li>
-							<li>Video width:more than 640px, the width of the video should be bigger than the height</li>
-							<li>Supported formats: .avi, .mov, .mp4, .flv, .wmv, .mkv</li> 
-							<li>Video Duration: more than 30 seconds and less than 20 minutes</li>
-						</ul>
-					</div>
-				</div>
-
-
-			</label>
-			<input type="file" id="upload_image" >
-		</div>
+            <file-pond #myPond [options]="pondOptions" [files]="pondFiles" (oninit)="pondHandleInit()"
+                (onaddfile)="pondHandleAddFile($event)" fxFlex="100">
+            </file-pond>
         </div>
+        <div class="video_upload_contaniner">
+            <label for="upload_image">
+                <div class="video_container" fxLayout="column" fxLayoutAlign="center center ">
+
+                    <img  src="assets/images/cloud.jpg" />
+                    <h4 class="h4">Select video file to upload</h4>
+
+
+                    <div class="video_condition">
+                        <ul class="condition_list">
+                            <li>File size less than 300MB</li>
+                            <li>Video width:more than 640px, the width of the video should be bigger than the height
+                            </li>
+                            <li>Supported formats: .avi, .mov, .mp4, .flv, .wmv, .mkv</li>
+                            <li>Video Duration: more than 30 seconds and less than 20 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </label>
+            <input type="file" id="upload_image" accept="video/mp4,video/x-m4v,video/*" (change)="onFileSelect($event)">
+        </div>
+
 
         <div fxLayout="column" fxLayoutAlign="center center " fxLayoutGap="10px">
             <button type="submit" mat-flat-button color="primary">Save</button>
         </div>
     </form>
-</mat-card>
+</div>
+<mat-toolbar style="background-color: transparent;">
+
+
+</mat-toolbar>
+

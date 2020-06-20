@@ -145,10 +145,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
-.mat-list-base{
-    padding-top: 0px !important;
-    
-}
+
 .list-item{
     text-decoration: none !important;
     padding-top: 0px !important;
@@ -163,6 +160,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
     }
 
+}
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height:60px !important;
 }
 
 .anchor-link{
@@ -240,9 +240,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .video_upload_contaniner{ 
    // border-style: dotted;
 }
-.video_container{ width:600px;height:600px;border:2px dashed gray;border-radius:3px;padding-left: 75px;padding-right: 75px;cursor:pointer; }
-.video_upload_contaniner img{width:400px;height:400px;}
-.h4{margin-top:-25px;}
+
+.video_container{ 
+    border:2px dashed gray;
+    border-radius:3px;cursor:pointer; 
+}
+
+.video_upload_contaniner img{
+    height: 200px;width:200px
+}
+
+.video_upload_contaniner h4{margin-top:-25px;}
+
 .video_condition{color:gray;}
 
 // canvas wrapper
